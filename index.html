@@ -1,27 +1,197 @@
 <!DOCTYPE html>
 <html>
+<head>
+<style>
+body{
+	background-color:transparent;
+	background-image: url("https://mdn.mozillademos.org/files/6457/mdn_logo_only_color.png");
+}
+div {
+	width:50%;
+	margin-left:10em;
+}
+h2,p{
+	color:orange;
+	text-align:leftwards;
+	background-color:#FFFFFF;
+	font-family: "Times New Roman";
+	margin-left:0.5em;
+}
+h3{
+	color:orange;
+	text-align:leftwards;
+	background-color:white;
+	font-family: "Times New Roman";
+}
+p{
+	color:#296297;
+	background-color:transparent;
+}
+table {
+	border-collapse:collapse;
+}
+td {
+	width:0.5em;
+}
+td#pcplay{
+	color:#A9A9A9;
+	text-align:center;
+}
+td#game {
+	text-align:center;
+	vertical-align:middle;
+	background-color:white;
+	width:2em;
+}
+</style>
+
+</head>
+
 <body>
+<div>
+<h2> "Sasso Carta Forbici" </h2>
 
-<p>Input your age and click the button:</p>
+<H4> Combatti a colpi di sasso carta o forbici! </H4>
+<h3>Scegli la tua mossa cercando di vincere contro il computer<br> 
+che con astuzia cerchera' di aver la meglio su di te.</h3>
+<p>
+La Carta vince contro il Sasso,<br>
+Il sasso vince contro la forbice, <br>
+la forbice ha la meglio sulla carta!</p>
 
-<input id="age" value="18" />
+<table style="width:100%" border="1px">
+<tr>
+<th>Gioca</th>
+<th >Mossa Pc</th>
+<th>Risultato</th>
+</tr>
 
-<button onclick="myFunction()">Try it</button>
+<form>
+<tr>
+<td>
+<input type="radio" name="Opzione" value="Sasso" checked id="sasso" onclick="fgame()"> Sasso <br>
+<input type="radio" name="Opzione" value="Forbici" id="forbici" onclick="fgame()"> Forbici<br>
+<input type="radio" name="Opzione" value="Carta" id="Carta" onclick="fgame()"> Carta<br>
+</td>
+<td id="pcplay">
+</td>
+<td id="game"> 
+<!--p id="game"> </p-->
+</td>
+</tr>
+</form>
+</table>
+</div>
 
-<p id="demo"></p>
 
+<!--script src="game.js"></script-->
 <script>
-function myFunction() {
-    var age, voteable;
-    age = Number(document.getElementById("age").value);
-    if (isNaN(age)) {
-        voteable = "Error in input";
-    } else {
-        voteable = (age < 18) ? "Too young" : "Old enough";
-    }
-    document.getElementById("demo").innerHTML = voteable;
-};
-</script>
+/*The Game
+Rock paper scissors is a classic 2 player game. Each player chooses either rock, paper or scissors. The possible outcomes:
 
+Rock destroys scissors.
+Scissors cut paper.
+Paper covers rock.
+Our code will break the game into 3 phases:
+a. User makes a choice
+b. Computer makes a choice
+c. A compare function will determine who wins
+*/
+
+//function fgame(){
+	
+/*
+var vConferma=confirm("Sei pronto per la sfida ?");
+	if(!Boolean(vConferma)){
+		window.alert("E' sempre meglio non aver paura di osare");
+		
+	} else {
+		var vUser=fForm(); //prompt("Scegli tra Sasso,Forbici,Carta","Sasso").toUpperCase();
+		//document.getElementById("try").innerHTML=fForm();
+	}
+	*/
+
+/*The Game
+Rock paper scissors is a classic 2 player game. Each player chooses either rock, paper or scissors. The possible outcomes:
+
+Rock destroys scissors.
+Scissors cut paper.
+Paper covers rock.
+Our code will break the game into 3 phases:
+a. User makes a choice
+b. Computer makes a choice
+c. A compare function will determine who wins
+*/
+
+function fgame(){
+	
+/*
+var vConferma=confirm("Sei pronto per la sfida ?");
+	if(!Boolean(vConferma)){
+		window.alert("E' sempre meglio non aver paura di osare");
+		
+	} else {
+		var vUser=fForm(); //prompt("Scegli tra Sasso,Forbici,Carta","Sasso").toUpperCase();
+		//document.getElementById("try").innerHTML=fForm();
+	}
+	*/
+var vUser=fForm();
+var pcScelta = Math.random();
+	if(pcScelta<=0.35){
+		pcScelta="SASSO";
+	} else {
+		(pcScelta <= 0.65) ? pcScelta="FORBICI":pcScelta="CARTA";
+	}
+document.getElementById("pcplay").innerHTML= " " + pcScelta;
+
+
+document.getElementById("game").innerHTML=fParagone(vUser,pcScelta);	
+var stileVres=document.getElementById("game").innerHTML;
+	if (stileVres==="Tenta di Nuovo la Fortuna..."){
+			document.getElementById("game").style.color="#FF6600";
+		} else{
+		
+			(stileVres==="Yeah - Hai Vinto!")?document.getElementById("game").style.color="green":document.getElementById("game").style.color="red";
+	}
+}
+function fParagone(scelta1,scelta2){
+var vRisultato;
+	if(scelta1==="SASSO"){
+		if(scelta2==="SASSO"){
+			vRisultato=("Tenta di Nuovo la Fortuna...");
+		} else {(scelta2==="FORBICI")? vRisultato=("Yeah - Hai Vinto!"):vRisultato=("Spiacente - Hai Perso!");
+		}
+	} else if(scelta1==="FORBICI"){
+		if(scelta2==="FORBICI"){
+			vRisultato=("Tenta di Nuovo la Fortuna...");
+		} else {
+			(scelta2==="SASSO")? vRisultato=("Spiacente - Hai Perso"):vRisultato=("Yeah - Hai Vinto!");
+		}
+	} else if(scelta1==="CARTA"){
+		if(scelta2==="CARTA"){
+			vRisultato=("Tenta di Nuovo la Fortuna...");
+		}else {
+			(scelta2==="SASSO")? vRisultato=("Yeah - Hai Vinto!"):vRisultato=("Spiacente - Hai Perso!");		
+		}	
+	}
+return vRisultato;
+  }
+
+  function fForm(){
+	var vOpzione=document.forms[0];
+	var i = 0;
+	var giocato;
+		for (;;){
+			if(i===vOpzione.length){break;}
+		if (vOpzione[i].checked){
+		 giocato = vOpzione[i].value;
+		 //fgame();
+		 }
+		i++;
+		}
+	//document.getElementById("try").innerHTML=giocato;
+	return giocato=giocato.toUpperCase();
+}
+</script>
 </body>
 </html>
