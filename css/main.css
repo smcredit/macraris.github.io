@@ -40,3 +40,17 @@ td#game {
 	background-color:white;
 	width:2em;
 }
+footer {
+    border-top: 1px solid #d5d5d5;
+    font-size: .8em;
+}
+
+a {
+    text-decoration: none;
+    color: #999;
+}
+a:hover {
+    text-decoration: underline;
+}
+    
+    
