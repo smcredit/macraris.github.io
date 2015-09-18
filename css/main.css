@@ -2,6 +2,19 @@
 body{
 	background-color:transparent;
 	background-image: url("https://mdn.mozillademos.org/files/6457/mdn_logo_only_color.png");
+	width:70%;
+	margin:auto;
+}
+nav ul,footer ul{
+	font-family:'Helvetica', 'Arial', 'Sans-Serif';
+	padding:0;
+	list-style:none;
+	font-weight:bold;
+}
+nav ul li,footer ul li{
+	display:inline;
+	margin-right:20px;
+	
 }
 div {
 	width:50%;
@@ -11,18 +24,20 @@ h2,p{
 	color:orange;
 	text-align:leftwards;
 	background-color:#FFFFFF;
-	font-family: "Times New Roman";
+	font-family:'Helvetica', 'Arial', 'Sans-Serif';
 	margin-left:0.5em;
 }
 h3{
 	color:orange;
 	text-align:leftwards;
 	background-color:white;
-	font-family: "Times New Roman";
+	font-family: 'Helvetica', 'Arial', 'Sans-Serif';
 }
 p{
 	color:#296297;
 	background-color:transparent;
+	font-size:1.5em;
+	line-height:2.5em;
 }
 table {
 	border-collapse:collapse;
