@@ -17,8 +17,8 @@ nav ul li,footer ul li{
 	
 }
 div {
-	width:50%;
-	margin-left:10em;
+	width:60%;
+	margin-left:5em;
 }
 h2,p{
 	color:orange;
@@ -36,8 +36,8 @@ h3{
 p{
 	color:#296297;
 	background-color:transparent;
-	font-size:1.5em;
-	line-height:2.5em;
+	font-size:1.3em;
+	line-height:1em;
 }
 table {
 	border-collapse:collapse;
@@ -63,7 +63,7 @@ footer {
 
 a {
     text-decoration: none;
-    color: #999;
+    color: #66CCCC;
 }
 a:hover {
     text-decoration: underline;
