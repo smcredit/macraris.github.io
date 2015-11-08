@@ -1,6 +1,6 @@
 ---
 layout:post
-title:"arisonjekyll"
+title:"ArisOnJekyll"
 date:2015-11-07
 ---
 Well. Finally got around to putting this old website together. Neat thing about it - powered by [Jekyll](http://jekyllrb.com) 
