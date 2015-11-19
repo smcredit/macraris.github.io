@@ -41,7 +41,18 @@ la forbice ha la meglio sulla carta!</p>
 		dim aris as string, wks as worksheet
 		aris="my name yeah"
 		msgbox aris
+	def show
+  @widget = Widget(params[:id])
+  respond_to do |format|
+    format.html # show.html.erb
+    format.json { render json: @widget }
+  end
+end
+
+
 	{% endhighlight %}
+	
+
 </div>
 <!--script src="game.js"></script-->
 <script>
