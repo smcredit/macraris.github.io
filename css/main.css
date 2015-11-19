@@ -73,6 +73,7 @@ a:hover {
   div#pyg {background-color:#e5e5e5; padding:20px;} 
 
 /*ADD SYNTAX CSS 4 CODE Highlight*/
+.highlight  { width: 50%; }
 .highlight  { background: #ffffff; }
 .highlight .c { color: #999988; font-style: italic } /* Comment */
 .highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
